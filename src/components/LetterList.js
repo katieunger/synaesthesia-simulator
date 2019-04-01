@@ -9,7 +9,7 @@ const LetterList = (props) => {
     });
 
     return (
-        <div className="ui horizontal list">
+        <div className="ui relaxed massive horizontal list">
             {renderedList}
         </div>
     );
