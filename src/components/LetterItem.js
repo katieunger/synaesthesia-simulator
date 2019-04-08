@@ -3,39 +3,24 @@ import 'rc-color-picker/assets/index.css';
 import ColorPicker from 'rc-color-picker';
 import './LetterItem.css';
 
-class LetterItem extends React.Component {
-    state = {
-        color: '#cccccc'
-    }
-
-    changeHandler = (object) => {
-        this.setState({ color: object.color });
-        console.log(this.state.color);
-        // console.log(colors);
-    }
-
-    // closeHandler= (colors) => {
-    //     console.log(colors);
-    // }
-
-    render() {
+const LetterItem = ({letter, color, index, onLetterSelect}) => {
         return (
+            //console.log(key, letter)
             <div className="letter-item item">
-                <div class="content">
+                <div className="content">
                     <ColorPicker
-                        onChange={this.changeHandler} 
+                        onChange={(selectedColor) => onLetterSelect(index, `${letter}`, selectedColor)}
                         animation="slide-up"
                     >
                         <span>
-                            <h1 style={{color: `${this.state.color}`, textTransform: "uppercase", fontWeight: "bolder"}}>
-                                {this.props.letter}
+                            <h1 style={{color: `${color}`, textTransform: "uppercase", fontWeight: "bolder"}}>
+                                {letter}
                             </h1>
                         </span>
                     </ColorPicker>
                 </div>
             </div>
         );
-    }
 };
 
 export default LetterItem;
