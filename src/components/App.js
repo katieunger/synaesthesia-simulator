@@ -21,12 +21,22 @@ class App extends React.Component {
             {letter:'m', color:'#cccccc'},
             {letter:'n', color:'#cccccc'},
             {letter:'o', color:'#cccccc'},
-            {letter:'p', color:'#cccccc'}
+            {letter:'p', color:'#cccccc'},
+            {letter:'q', color:'#cccccc'},
+            {letter:'r', color:'#cccccc'},
+            {letter:'s', color:'#cccccc'},
+            {letter:'t', color:'#cccccc'},
+            {letter:'u', color:'#cccccc'},
+            {letter:'v', color:'#cccccc'},
+            {letter:'w', color:'#cccccc'},
+            {letter:'x', color:'#cccccc'},
+            {letter:'y', color:'#cccccc'},
+            {letter:'z', color:'#cccccc'},
         ]
     }
 
     componentDidMount() {
-        console.log(this.state);
+        //console.log(this.state);
     }
 
     onLetterSelect = (index, selectedLetter, selectedColor) => {
@@ -40,17 +50,16 @@ class App extends React.Component {
             });
         
             return {
-            alphabet,
+                alphabet,
             };
         });
-        console.log(this.state);
     };
 
     render() {
         return (
             <div className="ui container">
                 <LetterList onLetterSelect={this.onLetterSelect} alphabet={this.state.alphabet} />
-                <TextDisplay />
+                <TextDisplay alphabet={this.state.alphabet}/>
             </div>
         );
     }
