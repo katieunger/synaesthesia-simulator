@@ -1,0 +1,11 @@
+:root {
+    --a: yellow;
+    --b: orange;
+    --c: pink;
+    --d: blue;
+    --e: green;
+}
+
+p span{
+    color: var(--a);
+}
